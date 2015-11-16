@@ -18,14 +18,6 @@ Route::resource('member', 'CommunityMemberController');
 
 Route::resource('donater', 'DonaterController');
 
-use App\Community;
-use App\Donater;
-
-Route::get('/test', function ()
-{
-	$com =  Community::all();
-
-	foreach ($com as $key => $value) {
-		return $value->donaters;
-	}
+Route::get('/', function(){
+	return view('welcome');
 });

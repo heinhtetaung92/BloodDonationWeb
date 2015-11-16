@@ -10,7 +10,14 @@ use App\Donater;
 use App\Community;
 
 class DonaterController extends Controller
-{
+{       
+
+    public function __construct()
+    {
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +25,12 @@ class DonaterController extends Controller
      */
     public function index()
     {
+        
         $donaters = Donater::all();
+        foreach ($donaters as $donater) {
+            $donater->community;
+        }
+
         return $donaters;
     }
 
@@ -58,10 +70,11 @@ class DonaterController extends Controller
      */
     public function show($id)
     {
+
         $donater = Donater::find($id);
-        // dd($donater);
-        // return $donater->community;
-        return $donater->communities;
+        $donater->community;
+        
+        return $donater;
     }
 
     /**
@@ -72,7 +85,7 @@ class DonaterController extends Controller
      */
     public function edit($id)
     {
-        return Donater::find($id);
+        return Donater::find($id)->community;
     }
 
     /**

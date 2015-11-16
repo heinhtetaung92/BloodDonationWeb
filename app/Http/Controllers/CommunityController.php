@@ -18,6 +18,9 @@ class CommunityController extends Controller
     public function index()
     {
         $communities = Community::all();
+        foreach ($communities as $community) {
+            $community->donaters;
+        }
         return $communities;
     }
 
@@ -56,7 +59,10 @@ class CommunityController extends Controller
      */
     public function show($id)
     {
-        return Community::find($id);
+        $community = Community::find($id);
+        $community->donaters;
+
+        return $community;
     }
 
     /**
@@ -67,7 +73,7 @@ class CommunityController extends Controller
      */
     public function edit($id)
     {
-        return Community::find($id);
+        return Community::find($id)->donaters;
     }
 
     /**

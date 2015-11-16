@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Donater extends Model
 {
-	public function communities()
+
+
+	public function community()
     {
-        return $this->belongsTo('Community');
+        return $this->belongsTo('App\Community');
     }
 
 }
