@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "BloodDonation",
   "version": "0.0.0",
   "private": true,
@@ -15,3 +16,14 @@
     "serve-favicon": "~2.3.0"
   }
 }
+=======
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  },
+  "dependencies": {
+    "laravel-elixir": "^3.0.0",
+    "bootstrap-sass": "^3.0.0"
+  }
+}
+>>>>>>> d311faefbb7645deb283c089fc2c8db7e78aaecf
